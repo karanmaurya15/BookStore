@@ -32,7 +32,7 @@
      color: #0A0102;
    }
   
-  .container1 {
+  .containerbox{
     width: 300px;
     height: 425px;
     background: #ffffff 0% 0% no-repeat padding-box;
@@ -51,6 +51,7 @@
     display: flex;
     align-items:center;
     justify-content: space-around;
+    margin-left: -10px;
   }
   .but{
     height: 40px;
@@ -68,7 +69,21 @@
     font-size: large;
     color:#0A0102;
   }
-
+.Input{
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    margin-left: 45px;
+}
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-form-field input {
+    font-size: 16px;
+    padding: 5px;
+  }
+  
   img {
     border-radius: 50%;
     height: 225px;
@@ -84,14 +99,17 @@
   
   #loginbtn {
     background-color: #a03037;
-    width: 100%;
+    width: 70%;
     height: 37px;
     display: flex;
     justify-content: center;
     outline: none;
     border: none;
     border-radius: 5px;
+    margin-left: 40px;
+    margin-top: 10px;
   }
+  
   #loginbtn button {
     background-color: #a03037;
     color: white;
@@ -100,11 +118,7 @@
     outline: none;
     border: none;
   }
-  
-  .Facebook {
-    width: 40%;
-  }
-  
+   
   
   @media screen and (max-width: 600px) {
     .container {
