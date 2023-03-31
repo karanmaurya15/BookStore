@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { UserService } from 'src/app/Services/UserService/user.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -8,11 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent {
   signupForm!: FormGroup;
-  signuped = false;
 
-  constructor(
-    private formBuilder: FormBuilder,
-  ) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
@@ -23,10 +20,21 @@ export class SignupComponent {
     });
   }
   Onsignup() {
-    this.signuped = true;
 
     if (this.signupForm.valid) {
-      console.log('signup function is called', this.signupForm.value);
+      console.log('Valid data', this.signupForm.value);
     }
+    let data = {
+      fullName: this.signupForm.value.fullName,
+      email: this.signupForm.value.email,
+      password: this.signupForm.value.password,
+      phone: this.signupForm.value.phone,
+      service: 'advance'
+    }
+    this.userService.signup(data).subscribe((result: any) => {
+     return console.log(result);
+   })
   }
 }
+
+

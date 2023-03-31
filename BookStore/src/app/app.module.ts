@@ -12,17 +12,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { LoginComponent } from './Components/login/login.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,MatInputModule,
+    AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,
     BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule
   ],
   providers: [],

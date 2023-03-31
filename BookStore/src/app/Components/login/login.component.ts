@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/Services/UserService/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,7 @@ export class LoginComponent {
   logined = false;
 
   constructor(
-    private formBuilder: FormBuilder,
-  ) { }
+    private formBuilder: FormBuilder,private userService:UserService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -25,7 +25,16 @@ export class LoginComponent {
     this.logined = true;
 
     if (this.loginForm.valid) {
-      console.log('onlogin function is called ', this.loginForm.value);
+      console.log('valid data ', this.loginForm.value);
+
+      let data = {
+        email: this.loginForm.value.email,
+        password: this.loginForm.value.password,
+        service:'advance'
+      }
+      this.userService.login(data).subscribe((result:any)=>{
+        console.log(result)
+      })
     }
   }
 }
