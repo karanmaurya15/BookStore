@@ -14,6 +14,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { DisplaybookComponent } from './Components/displaybook/displaybook.component';
+import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     LoginComponent,
     HeaderComponent,
     DashboardComponent,
+    GetAllBooksComponent,
+    DisplaybookComponent,
   ],
   imports: [
     BrowserModule,

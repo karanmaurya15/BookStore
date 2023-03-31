@@ -12,12 +12,12 @@ export class GetAllBooksComponent implements OnInit{
   bookArray=[];
   ngOnInit(){
     this.getAllBooks();
-
   }
 
-  constructor(private bookService:BookService){}
+  constructor(private bookService : BookService){}
 
   getAllBooks(){
+    console.log('daras')
     this.bookService.getAllBook().subscribe((responce:any )=>{
       console.log('Book Api is calling ', responce)
       this.bookArray=responce.result

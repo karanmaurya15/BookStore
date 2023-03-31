@@ -21,7 +21,7 @@ export class BookService {
         'Authorization': this.token
       })
     }
-    return this.http.GetService('bookstore_user/get/book', true, httpOption)
+    return this.http.GetService('bookstore_user/get/book', false, httpOption)
 
   }
 }
