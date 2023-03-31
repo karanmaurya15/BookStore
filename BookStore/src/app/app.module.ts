@@ -13,7 +13,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { LoginComponent } from './Components/login/login.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FooterComponent } from './Components/footer/footer.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     SignupComponent,
     LoginComponent,
     HeaderComponent,
-    FooterComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
