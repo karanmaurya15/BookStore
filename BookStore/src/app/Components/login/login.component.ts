@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/UserService/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,10 @@ import { UserService } from 'src/app/Services/UserService/user.service';
 export class LoginComponent {
   loginForm!: FormGroup
   logined = false;
+  
 
   constructor(
-    private formBuilder: FormBuilder,private userService:UserService) { }
+    private formBuilder: FormBuilder,private userService:UserService,private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -33,8 +35,10 @@ export class LoginComponent {
         service:'advance'
       }
       this.userService.login(data).subscribe((result:any)=>{
-        console.log(result)
+        console.log(result);
+        localStorage.setItem('token', result.result.accessToken);
       })
+      this.router.navigateByUrl('/dashboard/displaybook');
     }
   }
 }

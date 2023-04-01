@@ -99,19 +99,7 @@
     border: none;
     font-size: smaller;
   }
-  #wishButton {
-    background-color: #333333;
-  }
-  #heart {
-    font-size: 15px;
-    color: white;
-  }
-  .pagination{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 0%;
-  }
+
   .sorting{
     height: 5vh;
     width: 13vw;
@@ -126,8 +114,9 @@
     .container {
       display: flex;
       flex-direction: column;
+      width: auto;
   
-      margin-left: 60px;
+      margin-left: 40px;
     }
     h1 {
       margin-left: 80px;

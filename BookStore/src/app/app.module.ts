@@ -16,6 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { DisplaybookComponent } from './Components/displaybook/displaybook.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
+import { AuthguardService } from './Services/AuthguardService/authguard.service';
+
 
 
 @NgModule({
@@ -27,13 +31,14 @@ import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.c
     DashboardComponent,
     GetAllBooksComponent,
     DisplaybookComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,
-    BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule
+    AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,
+    BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

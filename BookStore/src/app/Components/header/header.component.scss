@@ -61,8 +61,6 @@
     flex-direction: column;
     background-color: #A03037;
     justify-content: center;
-    border-left: 0.1px solid black;
-    border-right:0.1px solid black ;
     margin-top: 7px;
   }
   .iconImage{
@@ -127,6 +125,9 @@
     .header {
       width: 168vw;
     }
+    .profile-cart {
+      margin-right: 150px;
+    }
   }
 
   @media only screen and (max-width:360px) {
@@ -139,6 +140,6 @@
       width: 235vw;
     }
     .profile-cart {
-      margin-right: 120px;
+      margin-right: 150px;
     }
   }

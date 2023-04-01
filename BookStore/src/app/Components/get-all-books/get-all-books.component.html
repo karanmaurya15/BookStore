@@ -1,1 +1,9 @@
+<div style="margin: 20px">
+    <button mat-button  [matMenuTriggerFor]="menu"  class="sorting" >Sort By Relavance</button>
+    <mat-menu #menu="matMenu" class="sorting">
+      <button mat-menu-item>Price: Low to High</button>
+      <button mat-menu-item >Price: High to Low</button>
+    </mat-menu>
+  </div>
+
 <app-displaybook [childArray]="bookArray"></app-displaybook>
