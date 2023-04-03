@@ -1,0 +1,388 @@
+.main-div{
+    padding-bottom: 20px;
+  }
+  .bookHead{
+    display: flex;
+    width: 30vw;
+    margin-left:200px ;
+    margin-top: 30px;
+  }
+  .home {
+    color: #9D9D9D;
+  }
+  
+  .booksOuterDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto ;
+    margin-left: 150px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .imgDiv {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .small-images{
+    display: flex;
+    flex-direction: column;
+  }
+  .small-img {
+    padding: 2px;
+    //border: 1px solid #7C1E1E;
+    background: #eabdc1;
+    width: 44px;
+    height: 54px;
+  }
+  
+  .big-image {
+    border: 1px solid #D1D1D1;
+    border-radius: 2px;
+    width: 361px;
+    height: 413px;
+  }
+  
+  .big-image img {
+    margin-top: 23px;
+    margin-left: 40px;
+    width: 282px;
+    height: 367px;
+  }
+  
+  
+  .buttonsDiv {
+    width: 363px;
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .bag {
+    background: #A03037;
+    color: white;
+    font-size: 14px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+  }
+  
+  .wishlist {
+    background: #333333;
+    color: white;
+    font-size: 14px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    
+  }
+  .text{
+    margin-top: -25px;
+    text-align: center;
+    margin-right: -17px
+  }
+  .wishimg1
+  {
+      width: 135px;
+      height: 25px;
+      margin-left: -90px;
+      margin-top: 8px;
+      border: none;
+      cursor: pointer;
+  }
+  
+  .book-details{
+    width: 40%;
+    margin-left: 7%;
+  }
+  .book-info{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    //border: 4px solid rgb(128, 0, 0);
+  }
+  .bookName{
+    font-weight: bold;
+    color:#0A0102;
+    font-size: 20px;
+  }
+  .authorName{
+    font-size: 12px;
+    color: #878787;
+    font-size: 15px;
+  }
+  .rating{
+    display: flex;
+    flex-direction: row;
+  }
+  .rating-num{
+    width: 35px;
+    height: 16px;
+    background-color: #388E3C;
+    border-radius: 1px;
+    font-size: 11px;
+    color: #FFFFFF;
+    margin-right: 5px;
+    padding-bottom: 3px;
+    padding-left: 7px;  
+  }
+  .bookQuantity{
+    color: #878787;
+    font-size: 13px;
+  }
+  
+  .discountPrice{
+    font-size: 20px;
+    font-weight: bold;
+    color: #0A0102;
+    margin-right: 10px;
+  }
+  .originalPrice{
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: line-through;
+    color: #878787;
+  }
+  
+  .detail{
+    color: #878787;
+    font-size: 17px;
+    margin-top: 20px;
+  }
+  
+  .description{
+    color:#373434;
+    font-size: 13px;
+  }
+  .feedback{
+    color:#0A0102;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .feedbackDiv{
+    width: 38vw;
+    height: 24vh;
+    background-color:#F5F5F5;
+  }
+  .overall{
+    color:#0A0102;
+    font-size: 11px;
+    margin-left: 11px;
+    margin-top: 13px;
+  }
+  
+  .feedbackInput {
+    margin-left: 11px;
+    width: 36vw;
+    height: 8vh;
+    font-weight: 100;
+    font: normal 15px/20px Roboto;
+    background-color: #FFFFFF;
+    border: none;  
+  }
+  .submitBtn {
+    position: absolute;
+    margin-top: 75px;
+    margin-left: -76px;
+    width: 76px;
+    height: 24px;
+    background-color: #3371B5;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  
+  .detail {
+    color: #373434;
+  }
+  
+  .feedbackList {
+    margin: 10px 0px;
+    width: 100%;
+  }
+  
+  .starContainer {
+    margin-left: -7px;
+    margin-top: -8px;
+    margin-bottom: 8px;
+  }
+  
+  input[type="radio"] {
+    visibility: hidden;
+  }
+  
+  
+  .line{
+    width: 38vw;
+  }
+  @media only screen and (max-width:1280px) {
+    .bookHead{
+      width: 30vw;
+      margin-left:120px;
+    }
+    .booksOuterDiv{
+      margin-left:120px;
+      width: 100vw;
+    }
+    .book-details{
+      width: 41vw;
+    }
+    .feedbackDiv{
+      height: 15vw;
+    }
+    .submitBtn {
+      margin-top: 80px;
+    }
+  }
+
+  @media only screen and (max-width:1025px) {
+    .bookHead{
+      margin-left:50px;
+    }
+    .booksOuterDiv{
+      margin-left:50px;
+      width: 100vw;
+    }
+    .feedbackDiv{
+      height: 18vw;
+    }
+  }
+  @media only screen and (max-width:913px) {
+    .bookHead{
+      width: 30vw;
+      margin-left:20px;
+    }
+    .booksOuterDiv{
+      margin-left:20px;
+      width: 97vw;
+    }
+    .book-details{
+      width: 43vw;
+    }
+    .feedbackDiv{
+      height: 18vh;
+    }
+    .submitBtn {
+      margin-top: 130px;
+    }
+  }
+  
+  @media only screen and (max-width:820px) {
+  
+    .booksOuterDiv{
+      width: 98vw;
+    }
+    .book-details{
+      margin-left: 3%;
+    }
+    .feedbackDiv{
+      height: 25vh !important;
+    }
+    .feedbackInput {
+      width: 35vw;
+    }
+    .submitBtn {
+      margin-top: 75px;
+    }
+  }
+  @media only screen and (max-width:769px) {
+    .booksOuterDiv{
+      width: 100vw !important;
+    }
+    .book-details{
+      margin-left: 1%;
+    }
+    .feedbackDiv{
+      height: 30vw;
+    }
+    
+  }
+  @media only screen and (max-width:541px) {
+    .bookHead{
+      margin-left:90px;
+    }
+    .booksOuterDiv{
+      width: 83vw !important;
+      margin-left: 90px;
+    }
+    .book-details{
+      width: 80vw;
+      margin-left: 30px;
+    }
+    .feedbackDiv{
+      height: 30vw;
+      width: 73vw;
+    }
+    .feedbackInput {
+      width: 68vw;
+    }
+  }
+  @media only screen and (max-width:415px) {
+    .bookHead{
+      width: 30vw;
+      margin-left:80px;
+    }
+    .booksOuterDiv{
+      margin-left:80px;
+      width: 120vw !important;
+    }
+    .book-details{
+      width: 120vw;
+    }
+    .feedbackDiv{
+      width: 100vw;
+      height: 24vh;
+    }
+    .feedbackInput {
+      width: 92vw;
+    }
+    .submitBtn {
+      margin-top: 100px;
+    }
+    .line{
+      width: 100vw;
+    }
+  }
+  @media only screen and (max-width:415px) {
+    .feedbackDiv{
+      height: 25vh;
+    }
+    .submitBtn {
+      margin-top: 80px;
+    }
+   
+  }
+  
+  @media only screen and (max-width:280px) {
+    .bookHead{
+      width: 40vw;
+      margin-left:80px;
+    }
+    .booksOuterDiv{
+      margin-left:80px;
+      width: 150vw !important;
+    }
+    .book-details{
+      width: 150vw;
+    }
+    .feedbackDiv{
+      height: 28vh !important;
+      width: 130vw;
+    }
+    .submitBtn {
+      margin-top: 70px;
+    }
+    .feedbackInput {
+      width: 120vw;
+    }
+    .line{
+      width: 130vw;
+    }
+   
+  }

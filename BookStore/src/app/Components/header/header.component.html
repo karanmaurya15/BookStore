@@ -10,17 +10,28 @@
 
             <div class="search">
                 <img src="../../../assets/Search-icon.svg">
-                <input class="search-input" type="text"  placeholder="Search...">
+                <input class="search-input" type="text" placeholder="Search...">
             </div>
         </div>
         <div class="profile-cart">
-            <div class="icons">
-                <img  class="iconImage"  src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg">
+            <div class="icons" [matMenuTriggerFor]="menu">
+                <img class="iconImage" src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg">
                 <p style="margin-left: 15px;">Profile</p>
             </div>
+            <mat-menu #menu="matMenu">
+                <h1>Welcome</h1>
+                <h5>To acsess account and manage orders</h5>
+                <button
+                    style=" border: solid brown 1px; width: 130px; display: flex; margin-left: 10px; color: brown; background-color: white; "
+                    mat-menu-item  (click)="logout()">Login/Signup
+                </button>
+                <hr>
+                <p style="margin-left: 10px; " >My Orders</p>
+                <p style="margin-left: 10px;">Wishlist</p>
+            </mat-menu>
             <div class="icons">
-                <span  ><img class="iconImage" src="../../../assets/cart.png"></span>
-                <p style="margin-left: 20px; margin-top: -12px;">Cart</p>   
+                <span><img class="iconImage" src="../../../assets/cart.png"></span>
+                <p style="margin-left: 20px; margin-top: -12px;">Cart</p>
             </div>
         </div>
     </mat-toolbar>

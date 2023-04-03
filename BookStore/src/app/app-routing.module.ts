@@ -7,6 +7,7 @@ import { HeaderComponent } from './Components/header/header.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { AuthenticationGuard } from './Authguard/authentication.guard';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
 
 const routes: Routes = [
   {path : '' , redirectTo: '/login', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent, canActivate:[AuthenticationGuard],
   children:[
     // {path:'get-all-books',component:GetAllBooksComponent},
-    {path:'displaybook',component:GetAllBooksComponent}
+    {path:'displaybook',component:GetAllBooksComponent},
+    {path:'quickview',component:QuickviewComponent}
   ]}
 ]
 

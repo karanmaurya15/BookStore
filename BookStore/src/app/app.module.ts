@@ -19,6 +19,8 @@ import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.c
 import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { AuthguardService } from './Services/AuthguardService/authguard.service';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -31,11 +33,12 @@ import { AuthguardService } from './Services/AuthguardService/authguard.service'
     DashboardComponent,
     GetAllBooksComponent,
     DisplaybookComponent,
+    QuickviewComponent,
   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,
+    AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,MatIconModule,
     BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule
   ],
   providers: [AuthguardService],
