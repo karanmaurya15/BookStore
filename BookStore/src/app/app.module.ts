@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthguardService } from './Services/AuthguardService/authguard.service';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { MatIconModule } from '@angular/material/icon';
+import { CartComponent } from './Components/cart/cart.component';
 
 
 
@@ -34,6 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
     GetAllBooksComponent,
     DisplaybookComponent,
     QuickviewComponent,
+    CartComponent,
   
   ],
   imports: [

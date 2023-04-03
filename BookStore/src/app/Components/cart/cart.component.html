@@ -1,0 +1,57 @@
+<div class="main-div">
+    <div class="bookHead">
+        <p class="home" routerLink="/dashboard/displaybook">Home / </p>
+        <p style="color: black; font-weight: 500;">My cart</p>
+    </div>
+
+    <!-- book in Cart -->
+    <div class="booksOuterDiv">
+        <div class="cart-detail">
+            <span style="color: black; font-weight: 500;">My Cart</span>
+            <select class="dropdown-select">
+                <option value="">Use current location</option>
+                <option value="location-1">Location</option>
+            </select>
+        </div>
+        <div class="bookDetail">
+            <div class="bookInfo">
+                <div class="image">
+                    <img style="width: 44px;  height: 54px;" src="../../../assets/pic-1.png">
+                </div>
+                <div class="bookData">
+                    <span class="bookName">bookname</span>
+                    <span class="authorName"> book.author</span>
+                    <div>
+                        <span class="discountPrice">Rs.book.discountPrice</span>
+                        <span class="originalPrice">Rs.book.price</span>
+                    </div>
+                    <div class="buttons">
+                        <div class="plus-minus">
+                            <button>+</button>
+                            <span class="cartQty">1</span>
+                            <button>-</button>
+                        </div>
+                        <button mat-stroked-button class="remove"> Remove</button>
+                    </div>
+                </div>
+            </div>
+            <div class="blueButton">
+                <button id="btn" mat-flat-button>Place Order</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Address details -->
+    <div class="address">
+        <div class="editAddress">
+            <span>Address Details</span>
+        </div>
+    </div>
+
+    <!-- Order summary -->
+    <div class="order-summary">
+        <div>
+            <span class="order">OrderSummary</span>
+        </div>
+    </div>
