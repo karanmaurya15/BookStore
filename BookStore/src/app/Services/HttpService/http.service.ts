@@ -18,8 +18,8 @@ export class HttpService {
     return this.httpClinet.get(this.baseUrl + url, token && httpOption);
   }
 
-  DeleteService() {
-   
+  DeleteService(url: string, token: boolean = true, httpOption: any) {
+    return this.httpClinet.delete(this.baseUrl + url, token && httpOption)
   }
   PutService(){}
    

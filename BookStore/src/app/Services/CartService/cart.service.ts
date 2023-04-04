@@ -32,5 +32,13 @@ export class CartService {
     }
     return this.http.GetService('bookstore_user/get_cart_items',true,httpOptions);
    }
-
+  removeCartItems(reqData:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.http.DeleteService('bookstore_user/remove_cart_item/'+ reqData._id, true,httpOptions)
+  }
 }

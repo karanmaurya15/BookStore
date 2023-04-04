@@ -4,9 +4,9 @@
         <p style="color: black; font-weight: 500;">My cart</p>
     </div>
 
-    <div class="booksOuterDiv" >
+    <div class="booksOuterDiv">
         <div class="cart-detail">
-            <span style="color: black; font-weight: 500;">My Cart {{cartitems.length}}</span>
+            <span style="color: black; font-weight: 500;">My Cart ({{cartitems.length}})</span>
             <select class="dropdown-select">
                 <option value="">Use current location</option>
                 <option value="location-1">Location</option>
@@ -18,11 +18,11 @@
                     <img style="width: 44px;  height: 54px;" src="../../../assets/pic-1.png">
                 </div>
                 <div class="bookData">
-                        <span class="bookName">{{item.product_id.bookName}}</span>
-                    <span class="authorName">{{item.authorName}}</span>
+                    <span class="bookName">{{item.product_id.bookName}}</span>
+                    <span class="authorName">{{item.product_id.author}}</span>
                     <div>
-                        <span class="discountPrice">Rs.{{item.discountPrice}}</span>
-                        <span class="originalPrice">Rs. {{item.price}}</span>
+                        <span class="discountPrice">Rs.{{item.product_id.discountPrice}}</span>
+                        <span class="originalPrice">Rs. {{item.product_id.price}}</span>
                     </div>
                     <div class="buttons">
                         <div class="plus-minus">
@@ -30,7 +30,7 @@
                             <span class="cartQty">1</span>
                             <button>-</button>
                         </div>
-                        <button mat-stroked-button class="remove"> Remove</button>
+                        <button mat-stroked-button class="remove" (click)="removeBook(item)"> Remove</button>
                     </div>
                 </div>
             </div>

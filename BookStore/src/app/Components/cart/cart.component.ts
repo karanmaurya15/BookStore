@@ -10,13 +10,21 @@ export class CartComponent implements OnInit {
   cartitems: any = []
   constructor(private cartService: CartService) { }
   ngOnInit(): void {
- this.getAllBooks()
+    this.getAllBooks()
   }
   getAllBooks() {
     this.cartService.getCartBook().subscribe((responce: any) => {
       console.log(responce);
       this.cartitems = responce.result
       console.log('items added', responce)
+      console.log(this.cartitems)
+    })
+  }
+  removeBook(book:any){
+    console.log(book);
+    this.cartService.removeCartItems(book).subscribe((responce:any)=>{
+      console.log('remove book', responce)
+      
     })
   }
 }
