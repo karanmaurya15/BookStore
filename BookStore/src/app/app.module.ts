@@ -22,6 +22,7 @@ import { AuthguardService } from './Services/AuthguardService/authguard.service'
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CartComponent } from './Components/cart/cart.component';
+import { FilterPipe } from './Pipe/filter.pipe';
 
 
 
@@ -36,6 +37,7 @@ import { CartComponent } from './Components/cart/cart.component';
     DisplaybookComponent,
     QuickviewComponent,
     CartComponent,
+    FilterPipe,
   
   ],
   imports: [

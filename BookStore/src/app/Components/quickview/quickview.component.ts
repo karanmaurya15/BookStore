@@ -18,7 +18,7 @@ export class QuickviewComponent implements OnInit{
   }
   addToCart(){
     let reqpayLoad= {
-      bookid:this.Book.id,
+      bookid:this.Book._id,
     };
     console.log(reqpayLoad)
     console.log('bookid', this.Book._id)

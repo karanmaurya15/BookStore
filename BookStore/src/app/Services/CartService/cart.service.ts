@@ -6,19 +6,31 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CartService {
-  token:any;
+  token: any;
 
-  constructor(private http:HttpService) {
-    this.token= localStorage.getItem('token')
-   }
+  constructor(private http: HttpService) {
+    this.token = localStorage.getItem('token')
+  }
 
-   addBookToCart(reqData:any){
+  addBookToCart(reqData: any) {
+    this.token = localStorage.getItem('token')
+    console.log('token', this.token)
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-         Authorization : this.token  
+        'x-access-token': this.token
       })
     }
-    return this.http.PostService('',reqData,true,httpOptions)
+    return this.http.PostService('bookstore_user/add_cart_item/'+ reqData.bookid, {}, true, httpOptions)
+  }
+   getCartBook(){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.http.GetService('bookstore_user/get_cart_items',true,httpOptions);
    }
+
 }

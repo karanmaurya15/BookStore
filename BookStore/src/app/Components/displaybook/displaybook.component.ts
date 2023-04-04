@@ -9,11 +9,13 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class DisplaybookComponent implements OnInit {
   @Input() childArray: any;
+  Search : string ='';
 
   constructor(private dataService: DataService) { }
   ngOnInit() {
-    this.dataService.getbookdetails.subscribe((res: any) => {
-      console.log('this is happen', res);
+    this.dataService.getbookdetails.subscribe((responce: any) => {
+      console.log('this is happen', responce);
+      this.Search = responce
     });
   }
   onBookclick(book: any) {
