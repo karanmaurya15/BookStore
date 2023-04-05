@@ -26,9 +26,9 @@
                     </div>
                     <div class="buttons">
                         <div class="plus-minus">
-                            <button>+</button>
-                            <span class="cartQty">1</span>
-                            <button>-</button>
+                            <button (click)="increaseQty(item)">+</button>
+                            <span class="cartQty">{{ item.quantityToBuy }}</span>
+                            <button (click)="decreaseQty(item)">-</button>
                         </div>
                         <button mat-stroked-button class="remove" (click)="removeBook(item)"> Remove</button>
                     </div>

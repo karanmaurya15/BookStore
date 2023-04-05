@@ -1,0 +1,96 @@
+.main-div{
+    padding-left: 17%;
+    height: fit-content;
+  }
+  .bookHead{
+    display: flex;
+    width: 30vw;
+    margin-top: 30px;
+  }
+  .home {
+    color: #9D9D9D;
+  }
+
+  .booksOuterDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
+    //height: 25vh;
+    //border: 1px solid red;
+    border-radius: 1px;
+    margin-top: 20px;
+    padding-bottom: 110px;
+  }
+  .wishlistcount {
+    border: 1px solid #E4E4E4;
+    width: 55vw;
+    margin-bottom: -20px;
+    padding: 10px 40px;
+    background-color:#F5F5F5;
+  }
+  .wishlistfont{
+    font: normal normal medium 18px/24px Roboto;
+    margin-left: -5px;
+    color: #0A0102;
+  }
+.booksInfo{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    height: 20vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid lightgray;
+    border-radius: 1px;
+    margin-top: 20px;
+    margin-bottom: -30px;
+}
+.book{
+  width: 55vw;
+  display: flex;
+  flex-direction: row;
+
+}
+.image{
+    padding-top: 33px;
+    padding-left: 33px;
+    //height: 200px;
+    width: 80px;
+  }
+  .bookData{
+    display: flex;
+    flex-direction: column;
+    //border: 4px solid blue;
+    margin-top: 38px;
+    padding-left: 25px;
+  }
+  .bookName{
+    color: #0A0102;
+    font: normal normal normal 18px/24px Roboto;
+  }
+  .authorName{
+    font: normal normal normal 12px/16px Roboto;
+    color: #9D9D9D;
+  }
+.discountPrice{
+   color: #0A0102;
+   font: normal normal normal 18px/24px Roboto;
+    margin-right: 10px;
+}
+.originalPrice{
+    font: normal normal normal 12px/16px Roboto;
+    color: #9D9D9D;
+    text-decoration: line-through;
+}
+
+.delete {
+    //margin-left: 580px;
+    margin-top: 60px;
+    
+}
+
+.deletebutton{
+    height: 30px;
+    width: 30px;
+    //margin-bottom: 100px;
+}
+

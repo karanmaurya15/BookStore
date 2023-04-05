@@ -23,6 +23,7 @@ import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CartComponent } from './Components/cart/cart.component';
 import { FilterPipe } from './Pipe/filter.pipe';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
 
 
 
@@ -38,6 +39,7 @@ import { FilterPipe } from './Pipe/filter.pipe';
     QuickviewComponent,
     CartComponent,
     FilterPipe,
+    WishlistComponent,
   
   ],
   imports: [

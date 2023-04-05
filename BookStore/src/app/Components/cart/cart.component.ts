@@ -8,10 +8,12 @@ import { CartService } from 'src/app/Services/CartService/cart.service';
 })
 export class CartComponent implements OnInit {
   cartitems: any = []
+  
   constructor(private cartService: CartService) { }
   ngOnInit(): void {
     this.getAllBooks()
   }
+
   getAllBooks() {
     this.cartService.getCartBook().subscribe((responce: any) => {
       console.log(responce);
@@ -20,11 +22,23 @@ export class CartComponent implements OnInit {
       console.log(this.cartitems)
     })
   }
+
   removeBook(book:any){
     console.log(book);
     this.cartService.removeCartItems(book).subscribe((responce:any)=>{
       console.log('remove book', responce)
       
     })
+  }
+  increaseQty(item:any) {
+    item.quantityToBuy++;
+    console.log('item added')
+  }
+
+  decreaseQty(item :any) {
+    if (item.quantityToBuy > 1) {
+      item.quantityToBuy--;
+      console.log('item removed')
+    }
   }
 }
