@@ -6,15 +6,22 @@ import { WishlistService } from 'src/app/Services/WishlistService/wishlist.servi
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.scss']
 })
-export class WishlistComponent implements OnInit{
-  constructor(private wishlistService:WishlistService){}
+export class WishlistComponent implements OnInit {
+  wishlistItems: any = []
+
+  constructor(private wishlistService: WishlistService) { }
 
   ngOnInit(): void {
-    
+    this.getWishlist();
   }
- getWishlistBook(){
-  this.wishlistService.getWishlistBook().subscribe((responce)=>{
-    console.log('get book', responce)
-  })
- }
+  getWishlist(){
+    this.wishlistService.getWishlistBook().subscribe((response :any) =>{
+      console.log(response);
+      this.wishlistItems = response.result
+      console.log(this.wishlistItems)
+    })
+  }
+  removebook(book:any){
+    console.log('delete')
+  }
 }

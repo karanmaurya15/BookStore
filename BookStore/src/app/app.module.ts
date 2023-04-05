@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CartComponent } from './Components/cart/cart.component';
 import { FilterPipe } from './Pipe/filter.pipe';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -45,7 +46,7 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
   imports: [
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,MatIconModule,
-    BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule
+    BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule,MatRadioModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]
