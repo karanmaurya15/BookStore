@@ -29,4 +29,15 @@ export class WishlistService {
     }
     return this.http.GetService('bookstore_user/get_wishlist_items', true, httpOptions)
   }
+
+  removeWishlistBook(reqData:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.http.DeleteService('bookstore_user/remove_wishlist_item/'+ reqData?.product_id?._id, true, httpOptions)
+  
+  }
 }

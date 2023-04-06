@@ -114,8 +114,22 @@
     .container {
       display: flex;
       flex-direction: column;
-      width: auto;
+      width: 100px;
   
+      margin-left: 40px;
+    }
+    h1 {
+      margin-left: 80px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .box1 {
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       margin-left: 40px;
     }
     h1 {

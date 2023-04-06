@@ -25,7 +25,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { FilterPipe } from './Pipe/filter.pipe';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import {MatRadioModule} from '@angular/material/radio';
   imports: [
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,MatIconModule,
-    BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule,MatRadioModule
+    BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule,MatRadioModule,
+    MatSnackBarModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

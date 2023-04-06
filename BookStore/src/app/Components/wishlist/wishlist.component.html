@@ -5,21 +5,21 @@
         <p style="color: black; font-weight: 500;">My Wishlist</p>
     </div>
 
-    <div class="booksOuterDiv" *ngFor="let book of wishlistItems">
+    <div class="booksOuterDiv" >
         <div class="wishlistcount">
-            <span class="wishlistfont" >My Wishlist({{wishlistItems.length}})</span>
+            <span class="wishlistfont" >My Wishlist({{wishlistItems?.length}})</span>
         </div>
-        <div class="booksInfo">
+        <div class="booksInfo"*ngFor="let book of wishlistItems">
             <div class="book" >
                 <div class="image">
                     <img style="width: 70px;  height: 90px;" src="../../../assets/pic-1.png">
                 </div>
                 <div class="bookData">
-                    <span class="bookName">{{book.product_id.bookName}}</span>
-                    <span class="authorName">{{book.product_id?.author}}</span>
+                    <span class="bookName">{{book?.product_id?.bookName}}</span>
+                    <span class="authorName">{{book?.product_id?.author}}</span>
                     <div>
-                        <span class="discountPrice">Rs.{{book.product_id.discountPrice}}</span>
-                        <span class="originalPrice">Rs. {{book.product_id.price}}</span>
+                        <span class="discountPrice">Rs.{{book?.product_id?.discountPrice}}</span>
+                        <span class="originalPrice">Rs. {{book?.product_id?.price}}</span>
                     </div>
                 </div>
             </div>   
