@@ -21,6 +21,7 @@ export class HttpService {
   DeleteService(url: string, token: boolean = true, httpOption: any) {
     return this.httpClinet.delete(this.baseUrl + url, token && httpOption)
   }
-  PutService(){}
+  PutService(url: string, reqData:any, token: boolean = true, httpOption: any){
+    return this.httpClinet.delete(this.baseUrl + url, token && httpOption)}
    
 }

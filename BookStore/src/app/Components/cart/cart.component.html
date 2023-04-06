@@ -18,16 +18,16 @@
                     <img style="width: 44px;  height: 54px;" src="../../../assets/pic-1.png">
                 </div>
                 <div class="bookData">
-                    <span class="bookName">{{item?.product_id?.bookName}}</span>
-                    <span class="authorName">{{item?.product_id?.author}}</span>
+                    <span class="bookName">{{item.product_id.bookName}}</span>
+                    <span class="authorName">{{item.product_id.author}}</span>
                     <div>
-                        <span class="discountPrice">Rs.{{item?.product_id?.discountPrice}}</span>
-                        <span class="originalPrice">Rs. {{item?.product_id?.price}}</span>
+                        <span class="discountPrice">Rs.{{item.product_id.discountPrice}}</span>
+                        <span class="originalPrice">Rs. {{item.product_id.price}}</span>
                     </div>
                     <div class="buttons">
                         <div class="plus-minus">
                             <button (click)="increaseQty(item)">+</button>
-                            <span class="cartQty">{{ item?.quantityToBuy }}</span>
+                            <span class="cartQty">{{ item.quantityToBuy }}</span>
                             <button (click)="decreaseQty(item)">-</button>
                         </div>
                         <button mat-stroked-button class="remove" (click)="removeBook(item)"> Remove</button>
@@ -36,27 +36,27 @@
             </div>
 
         </div>
-        <div class="blueButton">
-            <button id="btn" mat-flat-button>Place Order</button>
+        <div class="blueButton" *ngIf="placeOrder">
+            <button id="btn" mat-flat-button (click)="addressDetails()">Place Order</button>
         </div>
     </div>
 
-    <div class="address" >
-        <div class="editAddress" >
+    <div class="address">
+        <div class="editAddress" *ngIf="address">
             <span>Address Details</span>
         </div>
-        <div >
+        <div *ngIf="!address">
             <div class="editAddress">
                 <h1>Customer Details</h1>
-                <button  class="addressButton">Add New Address</button>
+                <button class="addressButton">Add New Address</button>
             </div>
-            <form>
+            <form [formGroup]="createForm" (ngSubmit)="onContinue()">
                 <div class="userDetails">
                     <div class="textFieldsDiv">
                         <div class="textField">
                             <span>Full name</span>
                             <mat-form-field appearance="outline" class="">
-                                <input matInput formControlName="fullname" >
+                                <input matInput formControlName="fullname">
                                 <mat-error>Full name is required</mat-error>
                             </mat-form-field>
                         </div>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="radioButton">
                         <span>Type</span>
-                        <mat-radio-group formControlName="addressType" aria-label="Select an option" style="margin-left: 30px;">
+                        <mat-radio-group formControlName="addressType"  aria-label="Select an option" style="margin-left: 30px;">
                             <mat-radio-button value="1">Home</mat-radio-button>
                             <mat-radio-button value="2">Work</mat-radio-button>
                             <mat-radio-button value="2">Other</mat-radio-button>
@@ -97,16 +97,34 @@
                     </div>
                 </div>
                 <div class="blueButton">
-                <button id ="btn" mat-flat-button>Continue</button>
+                    <button id="btn" mat-flat-button (click)="onContinue()">Continue</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="order-summary">
+    <div class="order-summary" >
         <div>
             <span class="order">OrderSummary</span>
+            <div class="bookDetail" *ngIf="!summary">
+                <div class="bookInfo" *ngFor="let item of cartitems">
+                    <div class="image">
+                        <img style="width: 44px;  height: 54px;" src="../../../assets/pic-1.png">
+                    </div>
+                    <div class="bookData">
+                        <span class="bookName">{{item.product_id.bookName}}</span>
+                        <span class="authorName"> {{item.product_id.author}}</span>
+                        <div>
+                            <span class="discountPrice">Rs.{{item.product_id.discountPrice}}</span>
+                            <span class="originalPrice">Rs.{{item.product_id.price}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blueButton">
+                    <button style="margin-right: 30px;" id="btn" mat-flat-button>Place Order</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
 </div>
-
