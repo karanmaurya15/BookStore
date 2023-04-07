@@ -17,8 +17,7 @@ export class CartComponent implements OnInit {
   placeOrder = true;
   summary = true;
   continue = true;
-
-
+  
   constructor(private cartService: CartService, private snackbar: MatSnackBar, private formBuilder: FormBuilder,) { }
   ngOnInit(): void {
     this.getAllBooks()
@@ -70,21 +69,18 @@ export class CartComponent implements OnInit {
 
   onContinue() {
     this.customerDetails = true;
-    console.log(this.customerDetails);
     if (this.createForm.valid) {
       this.summary = false;
       this.continue = false;
-      console.log('customers Details is callled', this.createForm.value);
+      console.log('customers Details', this.createForm.value);
       let data = {
-        fullname: this.createForm.value.fullName,
-        mobileNumber: this.createForm.value.mobileNumber,
-        address: this.createForm.value.address,
+        addressType: this.createForm.value.addressType,
+        fullAddress: this.createForm.value.address,
         city: this.createForm.value.city,
         state: this.createForm.value.state,
-        addressType: this.createForm.value.addressType,
       };
-      this.cartService.customerDetails(data).subscribe((response: any) => {
-        console.log('details', response)
+      this.cartService.customerDetails(data).subscribe((response:any)=>{
+        console.log(response)
       })
       this.snackbar.open('Customers Details filled Sucessfully', '', {
         duration: 3000,
@@ -92,4 +88,5 @@ export class CartComponent implements OnInit {
       });
     }
   }
+  orderPlaced(){}
 }

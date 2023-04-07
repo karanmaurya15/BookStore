@@ -43,6 +43,7 @@ export class CartService {
   }
 
   customerDetails(reqData:any){
+    this.token = localStorage.getItem('token')
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -51,5 +52,17 @@ export class CartService {
     }
     return this.http.PutService('bookstore_user/edit_user',reqData, true,httpOptions)
   }
+
+  Order(reqData:any){
+    this.token = localStorage.getItem('token')
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.http.PostService('bookstore_user/add/order',reqData, true,httpOptions)
   }
+  }
+  
 

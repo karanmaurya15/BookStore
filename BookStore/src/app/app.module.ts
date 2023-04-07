@@ -26,6 +26,7 @@ import { FilterPipe } from './Pipe/filter.pipe';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CartComponent,
     FilterPipe,
     WishlistComponent,
+    OrderPlacedComponent,
   
   ],
   imports: [
