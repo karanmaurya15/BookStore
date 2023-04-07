@@ -43,6 +43,7 @@ export class CartService {
   }
 
   customerDetails(reqData:any){
+    console.log(reqData)
     this.token = localStorage.getItem('token')
     const httpOptions = {
       headers: new HttpHeaders({

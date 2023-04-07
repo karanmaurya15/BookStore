@@ -10,13 +10,14 @@ import { CartService } from 'src/app/Services/CartService/cart.service';
 })
 export class CartComponent implements OnInit {
   cartitems: any = []
-
+  addressType: any[] = ['Home', 'work', 'others'];
   createForm!: FormGroup
   customerDetails = false;
   address = true;
   placeOrder = true;
   summary = true;
   continue = true;
+  Book: any;
   
   constructor(private cartService: CartService, private snackbar: MatSnackBar, private formBuilder: FormBuilder,) { }
   ngOnInit(): void {
@@ -27,7 +28,7 @@ export class CartComponent implements OnInit {
       address: ['', [Validators.required]],
       city: ['', [Validators.required]],
       state: ['', [Validators.required]],
-      addressType: ['', Validators.required]
+      // addressType: ['', Validators.required]
     });
   }
 
@@ -74,19 +75,41 @@ export class CartComponent implements OnInit {
       this.continue = false;
       console.log('customers Details', this.createForm.value);
       let data = {
-        addressType: this.createForm.value.addressType,
+        addressType: this.addressType,
         fullAddress: this.createForm.value.address,
         city: this.createForm.value.city,
         state: this.createForm.value.state,
       };
+      console.log('data',data)
       this.cartService.customerDetails(data).subscribe((response:any)=>{
         console.log(response)
       })
-      this.snackbar.open('Customers Details filled Sucessfully', '', {
+      this.snackbar.open('Customers Details filled Successfully', '', {
         duration: 3000,
         verticalPosition: 'bottom',
       });
     }
   }
-  orderPlaced(){}
+  orderPlaced(){
+    let orders: Array<any> = []
+    for (this.Book of this.cartitems) {
+      let Book = {
+        product_id: this.Book.product_id._id,
+        product_name: this.Book.product_id.bookName,
+        product_quantity: this.Book.product_id.quantity,
+        product_price: this.Book.product_id.price,
+      }
+      orders.push(Book)
+    }
+    let payload = {
+      orders: orders
+    }
+    this.cartService.Order(payload).subscribe((res)=>{
+      console.log(res);
+    })
+    this.snackbar.open('Order is Successfully placed!', '', {
+      duration: 3000,
+      verticalPosition: 'bottom',
+    });
+  }
 }
