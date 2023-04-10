@@ -28,7 +28,6 @@ export class CartComponent implements OnInit {
       address: ['', [Validators.required]],
       city: ['', [Validators.required]],
       state: ['', [Validators.required]],
-      // addressType: ['', Validators.required]
     });
   }
 
@@ -44,7 +43,7 @@ export class CartComponent implements OnInit {
     console.log(book);
     this.cartService.removeCartItems(book).subscribe((responce: any) => {
       console.log('remove book', responce)
-      this.getAllBooks();
+      location.reload();
     })
     this.snackbar.open('Book Removed', '', {
       duration: 3000,
@@ -104,8 +103,8 @@ export class CartComponent implements OnInit {
     let payload = {
       orders: orders
     }
-    this.cartService.Order(payload).subscribe((res)=>{
-      console.log(res);
+    this.cartService.Order(payload).subscribe((response)=>{
+      console.log(response);
     })
     this.snackbar.open('Order is Successfully placed!', '', {
       duration: 3000,

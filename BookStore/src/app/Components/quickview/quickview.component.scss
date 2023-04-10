@@ -221,25 +221,7 @@
   .line{
     width: 38vw;
   }
-  @media only screen and (max-width:1280px) {
-    .bookHead{
-      width: 30vw;
-      margin-left:120px;
-    }
-    .booksOuterDiv{
-      margin-left:120px;
-      width: 100vw;
-    }
-    .book-details{
-      width: 41vw;
-    }
-    .feedbackDiv{
-      height: 15vw;
-    }
-    .submitBtn {
-      margin-top: 80px;
-    }
-  }
+
 
   @media only screen and (max-width:1025px) {
     .bookHead{
@@ -273,36 +255,8 @@
     }
   }
   
-  @media only screen and (max-width:820px) {
+
   
-    .booksOuterDiv{
-      width: 98vw;
-    }
-    .book-details{
-      margin-left: 3%;
-    }
-    .feedbackDiv{
-      height: 25vh !important;
-    }
-    .feedbackInput {
-      width: 35vw;
-    }
-    .submitBtn {
-      margin-top: 75px;
-    }
-  }
-  @media only screen and (max-width:769px) {
-    .booksOuterDiv{
-      width: 100vw !important;
-    }
-    .book-details{
-      margin-left: 1%;
-    }
-    .feedbackDiv{
-      height: 30vw;
-    }
-    
-  }
   @media only screen and (max-width:541px) {
     .bookHead{
       margin-left:90px;
@@ -330,7 +284,7 @@
     }
     .booksOuterDiv{
       margin-left:80px;
-      width: 120vw !important;
+      width: 120vw;
     }
     .book-details{
       width: 120vw;

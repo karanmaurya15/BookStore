@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from 'src/app/Services/CartService/cart.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
 import { WishlistService } from 'src/app/Services/WishlistService/wishlist.service';
@@ -9,7 +10,7 @@ import { WishlistService } from 'src/app/Services/WishlistService/wishlist.servi
   styleUrls: ['./quickview.component.scss']
 })
 export class QuickviewComponent implements OnInit{
-  constructor(private dataService: DataService, private cartservice:CartService, private wishlistServisce:WishlistService) {}
+  constructor(private dataService: DataService, private cartservice:CartService, private snackbar: MatSnackBar, private wishlistServisce:WishlistService) {}
   Book: any;
   ngOnInit(): void {
     this.dataService.getbookdetails.subscribe((result: any) => {
@@ -26,6 +27,10 @@ export class QuickviewComponent implements OnInit{
     this.cartservice.addBookToCart(reqpayLoad).subscribe((res:any)=>{
       console.log(res)
     })
+    this.snackbar.open('Book Added to Cart', '', {
+      duration: 2000,
+      verticalPosition: 'bottom',
+    });
   }
   addToWishlist(){
     let reqpayLoad= {
@@ -34,6 +39,10 @@ export class QuickviewComponent implements OnInit{
     this.wishlistServisce.addBookToWishlist(reqpayLoad).subscribe((result)=>{
       console.log('added to wishlist',result)
     })
+    this.snackbar.open('Book Added to Wishlist', '', {
+      duration: 2000,
+      verticalPosition: 'bottom',
+    });
   }
   
 }

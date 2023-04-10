@@ -19,6 +19,7 @@ export class WishlistComponent implements OnInit {
       console.log(response);
       this.wishlistItems = response.result
       console.log(this.wishlistItems)
+      this.wishlistItems.reverse();
     })
   }
   removebook(book:any){
@@ -27,4 +28,5 @@ export class WishlistComponent implements OnInit {
       console.log('book remove',result)
     })
   }
+
 }

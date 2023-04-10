@@ -21,4 +21,5 @@ export class DisplaybookComponent implements OnInit {
   onBookclick(book: any) {
     this.dataService.SendBookDetails(book);
   }
+  
 }
