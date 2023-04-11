@@ -18,7 +18,8 @@ export class CartComponent implements OnInit {
   summary = true;
   continue = true;
   Book: any;
-  
+  items: any
+
   constructor(private cartService: CartService, private snackbar: MatSnackBar, private formBuilder: FormBuilder,) { }
   ngOnInit(): void {
     this.getAllBooks()
@@ -51,16 +52,28 @@ export class CartComponent implements OnInit {
     });
   }
   increaseQty(item: any) {
-    item.quantityToBuy++;
-    console.log('item added')
+    item.quantityToBuy += 1;
+    console.log('item added');
+    this.itemInCart(item);
   }
-
+  
   decreaseQty(item: any) {
     if (item.quantityToBuy > 1) {
-      item.quantityToBuy--;
-      console.log('item removed')
+      item.quantityToBuy -= 1;
+      console.log('item removed');
+      this.itemInCart(item);
     }
   }
+  
+  itemInCart(book: any) {
+    let data = {
+      quantityToBuy: book.quantityToBuy
+    };
+    this.cartService.itemQuantity(book._id, data).subscribe((res) => {
+      console.log('quantity updated', res);
+    });
+  }
+  
 
   addressDetails() {
     this.address = false;
@@ -79,8 +92,8 @@ export class CartComponent implements OnInit {
         city: this.createForm.value.city,
         state: this.createForm.value.state,
       };
-      console.log('data',data)
-      this.cartService.customerDetails(data).subscribe((response:any)=>{
+      console.log('data', data)
+      this.cartService.customerDetails(data).subscribe((response: any) => {
         console.log(response)
       })
       this.snackbar.open('Customers Details filled Successfully', '', {
@@ -89,7 +102,7 @@ export class CartComponent implements OnInit {
       });
     }
   }
-  orderPlaced(){
+  orderPlaced() {
     let orders: Array<any> = []
     for (this.Book of this.cartitems) {
       let Book = {
@@ -103,7 +116,7 @@ export class CartComponent implements OnInit {
     let payload = {
       orders: orders
     }
-    this.cartService.Order(payload).subscribe((response)=>{
+    this.cartService.Order(payload).subscribe((response) => {
       console.log(response);
     })
     this.snackbar.open('Order is Successfully placed!', '', {

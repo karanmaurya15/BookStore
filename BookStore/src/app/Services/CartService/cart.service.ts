@@ -21,28 +21,28 @@ export class CartService {
         'x-access-token': this.token
       })
     }
-    return this.http.PostService('bookstore_user/add_cart_item/'+ reqData.bookid, {}, true, httpOptions)
+    return this.http.PostService('bookstore_user/add_cart_item/' + reqData.bookid, {}, true, httpOptions)
   }
-   getCartBook(){
+  getCartBook() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'x-access-token': this.token
       })
     }
-    return this.http.GetService('bookstore_user/get_cart_items',true,httpOptions);
-   }
-  removeCartItems(reqData:any){
+    return this.http.GetService('bookstore_user/get_cart_items', true, httpOptions);
+  }
+  removeCartItems(reqData: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'x-access-token': this.token
       })
     }
-    return this.http.DeleteService('bookstore_user/remove_cart_item/'+ reqData._id, true,httpOptions)
+    return this.http.DeleteService('bookstore_user/remove_cart_item/' + reqData._id, true, httpOptions)
   }
 
-  customerDetails(reqData:any){
+  customerDetails(reqData: any) {
     console.log(reqData)
     this.token = localStorage.getItem('token')
     const httpOptions = {
@@ -51,10 +51,10 @@ export class CartService {
         'x-access-token': this.token
       })
     }
-    return this.http.PutService('bookstore_user/edit_user',reqData, true,httpOptions)
+    return this.http.PutService('bookstore_user/edit_user', reqData, true, httpOptions)
   }
 
-  Order(reqData:any){
+  Order(reqData: any) {
     this.token = localStorage.getItem('token')
     const httpOptions = {
       headers: new HttpHeaders({
@@ -62,27 +62,37 @@ export class CartService {
         'x-access-token': this.token
       })
     }
-    return this.http.PostService('bookstore_user/add/order',reqData, true,httpOptions)
+    return this.http.PostService('bookstore_user/add/order', reqData, true, httpOptions)
   }
 
-  addFeedback(reqData:any , id:any){
+  addFeedback(reqData: any, id: any) {
     let httpOptions = {
-      headers : new HttpHeaders ({
+      headers: new HttpHeaders({
         'Content-type': 'application/json',
-        'x-access-token':this.token
+        'x-access-token': this.token
       })
     }
-    return this.http.PostService('bookstore_user/add/feedback/' + reqData.id, reqData, true , httpOptions)
+    return this.http.PostService('bookstore_user/add/feedback/' + id, reqData, true, httpOptions)
   }
-   getAllFeedBack(id:any){
+  getAllFeedBack(id: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'x-access-token': this.token
       })
-   }
-   return this.http.GetService('bookstore_user/get/feedback/'+id,true,httpOptions)
+    }
+    return this.http.GetService('bookstore_user/get/feedback/' + id, true, httpOptions)
   }
+
+  itemQuantity(bookid: any, reqData: any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.http.PutService('bookstore_user/cart_item_quantity/'+bookid, reqData, true,httpOptions)
   }
-  
+}
+
 
