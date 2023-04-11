@@ -12,11 +12,15 @@ import { WishlistService } from 'src/app/Services/WishlistService/wishlist.servi
 export class QuickviewComponent implements OnInit{
   constructor(private dataService: DataService, private cartservice:CartService, private snackbar: MatSnackBar, private wishlistServisce:WishlistService) {}
   Book: any;
+  comment: any;
+  feedBackList:any
   ngOnInit(): void {
     this.dataService.getbookdetails.subscribe((result: any) => {
       this.Book = result;
       console.log('data of quickview',this.Book);
+      
     });
+    this.getFeedBackList()
   }
   addToCart(){
     let reqpayLoad= {
@@ -44,5 +48,22 @@ export class QuickviewComponent implements OnInit{
       verticalPosition: 'bottom',
     });
   }
-  
+  sumitFeedBack(){
+    let data = {
+      comment: this.comment,
+      rating: '4',
+      // bookid: this.Book._id,
+    };
+    console.log(data)
+    this.cartservice.addFeedback(data, this.Book._id).subscribe((res:any)=>{
+      console.log('feedBack Added', res);
+    })
+  }
+   getFeedBackList(){
+    this.cartservice.getAllFeedBack(this.Book._id).subscribe((res:any)=>{
+      console.log(res)
+      this.feedBackList= res.result;
+      console.log(this.feedBackList)
+    })
+   }
 }

@@ -27,6 +27,8 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -49,7 +51,7 @@ import { OrderPlacedComponent } from './Components/order-placed/order-placed.com
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,MatIconModule,
     BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule,MatRadioModule,
-    MatSnackBarModule
+    MatSnackBarModule,MatBadgeModule,MatPaginatorModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

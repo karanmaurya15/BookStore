@@ -72,8 +72,8 @@
                     </div>
 
                     <textarea matInput class="feedbackInput" type="text" placeholder="write a review"
-                    name="comment"></textarea>
-                    <button class="submitBtn">Submit</button>
+                    name="comment" [(ngModel)]="comment"></textarea>
+                    <button class="submitBtn" (click)="sumitFeedBack()">Submit</button>
                 </div>
             </div>   
         </div> 

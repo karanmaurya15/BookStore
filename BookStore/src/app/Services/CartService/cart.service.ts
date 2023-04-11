@@ -64,6 +64,25 @@ export class CartService {
     }
     return this.http.PostService('bookstore_user/add/order',reqData, true,httpOptions)
   }
+
+  addFeedback(reqData:any , id:any){
+    let httpOptions = {
+      headers : new HttpHeaders ({
+        'Content-type': 'application/json',
+        'x-access-token':this.token
+      })
+    }
+    return this.http.PostService('bookstore_user/add/feedback/' + reqData.id, reqData, true , httpOptions)
+  }
+   getAllFeedBack(id:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+   }
+   return this.http.GetService('bookstore_user/get/feedback/'+id,true,httpOptions)
+  }
   }
   
 
