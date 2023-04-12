@@ -10,6 +10,8 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 export class DisplaybookComponent implements OnInit {
   @Input() childArray: any;
   Search : string ='';
+  totalLength:any;
+  page:number=1;
 
   constructor(private dataService: DataService) { }
   ngOnInit() {

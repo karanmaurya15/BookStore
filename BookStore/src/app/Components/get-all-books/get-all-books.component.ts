@@ -25,7 +25,7 @@ export class GetAllBooksComponent implements OnInit{
     })
   }
   lowtohigh() {
-    console.log()
+    console.log(this.bookArray)
     this.bookArray= this.bookArray.sort((a: any, b: any) => a.discountPrice - b.discountPrice);
     console.log('low to high', this.bookArray);
   }

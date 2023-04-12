@@ -56,7 +56,7 @@ export class CartComponent implements OnInit {
     console.log('item added');
     this.itemInCart(item);
   }
-  
+
   decreaseQty(item: any) {
     if (item.quantityToBuy > 1) {
       item.quantityToBuy -= 1;
@@ -64,7 +64,7 @@ export class CartComponent implements OnInit {
       this.itemInCart(item);
     }
   }
-  
+
   itemInCart(book: any) {
     let data = {
       quantityToBuy: book.quantityToBuy
@@ -73,7 +73,7 @@ export class CartComponent implements OnInit {
       console.log('quantity updated', res);
     });
   }
-  
+
 
   addressDetails() {
     this.address = false;

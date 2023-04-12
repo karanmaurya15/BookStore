@@ -7,7 +7,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="box1" *ngFor="let book of childArray | filter :Search">
+    <div class="box1" *ngFor="let book of childArray | filter :Search | paginate: {itemsPerPage: 4, currentPage:page,totalItems:totalLength} ">
         <div class="image" (click)="onBookclick(book)" routerLink="/dashboard/quickview">
             <img src="../../../assets/pic-1.png" alt="" />
         </div>
@@ -31,9 +31,8 @@
     </div>
  
 </div>
-<div class="pagination">
-    <mat-paginator [length]="100" [pageSize]="4" aria-label="Select page">
-    </mat-paginator>
+
+<div class="pagination" >
+    <pagination-controls (pageChange)="page=$event"></pagination-controls>
 </div>
-
-
+ 

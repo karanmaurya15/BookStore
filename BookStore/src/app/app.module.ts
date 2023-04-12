@@ -29,6 +29,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -45,13 +46,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FilterPipe,
     WishlistComponent,
     OrderPlacedComponent,
+    
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,MatIconModule,
     BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule,MatRadioModule,
-    MatSnackBarModule,MatBadgeModule,MatPaginatorModule
+    MatSnackBarModule,MatBadgeModule,MatPaginatorModule,NgxPaginationModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

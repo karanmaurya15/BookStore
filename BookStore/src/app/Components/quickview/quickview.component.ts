@@ -55,12 +55,14 @@ export class QuickviewComponent implements OnInit{
       // bookid: this.Book._id,
     };
     console.log(data)
-    this.cartservice.addFeedback(data, this.Book._id).subscribe((res:any)=>{
+    this.cartservice.addFeedback(this.Book._id, data).subscribe((res:any)=>{
       console.log('feedBack Added', res);
     })
   }
    getFeedBackList(){
+    console.log(this.Book)
     this.cartservice.getAllFeedBack(this.Book._id).subscribe((res:any)=>{
+
       console.log(res)
       this.feedBackList= res.result;
       console.log(this.feedBackList)
