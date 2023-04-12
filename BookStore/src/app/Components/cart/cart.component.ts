@@ -74,7 +74,6 @@ export class CartComponent implements OnInit {
     });
   }
 
-
   addressDetails() {
     this.address = false;
     this.placeOrder = false;

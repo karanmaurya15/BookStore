@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/DataService/data.service';
 
@@ -8,7 +8,7 @@ import { DataService } from 'src/app/Services/DataService/data.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
- 
+  @Input() cartitemslist:any;
   constructor(private router: Router, private dataService: DataService) {}
   token: any;
   logout() {

@@ -30,7 +30,8 @@
                 <p style="margin-left: 10px;" routerLink="/dashboard/wishlist">Wishlist</p>
             </mat-menu>
             <div class="icons">
-                <span><img class="iconImage" matBadge="15" src="../../../assets/cart.png" routerLink="/dashboard/cart"></span>
+                <span><img class="iconImage"  [matBadge]="cartitemslist" matBadgeColor="warn"
+                    matBadgePosition="below after"  src="../../../assets/cart.png" routerLink="/dashboard/cart"></span>
                 <p style="margin-left: 20px; margin-top: -12px;">Cart</p>
             </div>
         </div>

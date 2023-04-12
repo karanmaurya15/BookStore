@@ -7,20 +7,29 @@
         <div>
             <div class="imgDiv">
                 <div class="small-images">
-                    <img class="small-img" src="../../../assets/pic-1.png" >
-                    <img class="small-img" src="../../../assets/pic-13.png" >
+                    <img class="small-img" src="../../../assets/pic-1.png">
+                    <img class="small-img" src="../../../assets/pic-13.png">
                 </div>
                 <div class="big-image">
                     <img src="../../../assets/pic-1.png">
                 </div>
             </div>
             <div class="buttonsDiv">
-                <button class="bag" mat-flat-button style="background-color: brown;" (click)="addToCart()">ADD TO BAG</button>
+                <div (click)="isShow()" *ngIf="!show">
+                    <button class="bag" mat-flat-button style="background-color: brown;" (click)="addToCart()">ADD TO
+                        BAG</button>
+                </div>
+                <div class="plus-minus"  *ngIf="show">
+                    <button >+</button>
+                    <span class="cartQty"> 5</span>
+                    <button >-</button>
+                </div>
                 <button (click)="addToWishlist()" class="wishlist">
                     <mat-icon class="wishimg1">favorite</mat-icon>
-                    <p class="text">WISHLIST</p></button>
+                    <p class="text">WISHLIST</p>
+                </button>
             </div>
-        </div>  
+        </div>
         <div class="book-details">
             <div class="book-info">
                 <p class="bookName">{{ Book.bookName }}</p>
@@ -29,25 +38,25 @@
                     <div class="rating-num">
                         <span>4.1</span>
                     </div>
-                    <p class="bookQuantity"></p>
+                    <p class="bookQuantity">({{Book.quantity}})</p>
                 </div>
                 <div>
                     <span class="discountPrice">Rs. {{ Book.discountPrice }}</span>
                     <span class="originalPrice">Rs. {{ Book.price}}</span>
                 </div>
             </div>
-            <hr class="line"/>
+            <hr class="line" />
             <div class="book-info">
                 <p class="detail">Book Detail</p>
-                <p class="description"> 
+                <p class="description">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
                     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
                     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
                     amet.
                 </p>
-            </div> 
-            <hr class="line"/>
+            </div>
+            <hr class="line" />
             <div class="book-info">
                 <p class="feedback">Customer Feedback</p>
                 <div class="feedbackDiv">
@@ -56,27 +65,27 @@
                     <div class="starContainer">
                         <input type="radio" name="rate" id="rate-1" value="1">
                         <label for="rate-1"><img src="../../../assets/star (1).svg" width="22px"></label>
-    
+
                         <input type="radio" name="rate" id="rate-2" value="2">
                         <label for="rate-2"><img src="../../../assets/star (1).svg" width="22px"></label>
-    
+
                         <input type="radio" name="rate" id="rate-3" value="3">
                         <label for="rate-3"><img src="../../../assets/star (1).svg" width="22px"></label>
-    
+
                         <input type="radio" name="rate" id="rate-4" value="4">
                         <label for="rate-4"><img src="../../../assets/star (1).svg" width="22px"></label>
-    
+
                         <input type="radio" name="rate" id="rate-5" value="5">
                         <label for="rate-5"><img src="../../../assets/star (1).svg" width="22px"></label>
-    
+
                     </div>
 
-                    <textarea matInput class="feedbackInput" type="text" placeholder="write a review"
-                    name="comment" [(ngModel)]="comment"></textarea>
+                    <textarea matInput class="feedbackInput" type="text" placeholder="write a review" name="comment"
+                        [(ngModel)]="comment"></textarea>
                     <button class="submitBtn" (click)="sumitFeedBack()">Submit</button>
                 </div>
-            </div>   
-        </div> 
+            </div>
+        </div>
     </div>
+
 </div>
-    

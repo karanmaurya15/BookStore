@@ -7,7 +7,8 @@
     </div>
 </div>
 <div class="container">
-    <div class="box1" *ngFor="let book of childArray | filter :Search | paginate: {itemsPerPage: 4, currentPage:page,totalItems:totalLength} ">
+    <div class="box1"
+        *ngFor="let book of childArray | filter :Search | paginate: {itemsPerPage: 4, currentPage:page,totalItems:totalLength} ">
         <div class="image" (click)="onBookclick(book)" routerLink="/dashboard/quickview">
             <img src="../../../assets/pic-1.png" alt="" />
         </div>
@@ -19,20 +20,23 @@
             <h5 class="contentName" style="font-size: x-small; color: #878787">
                 {{ book.author }}
             </h5>
-            <p class="contentName">
-                <button id="starbutton">
-                    4.5 <i id="star" class="material-symbols-outlined"></i>
-                </button>(20)
-            </p>
+            <div style="display: flex; flex-direction: row;">
+                <p class="contentName">
+                    <button id="starbutton">
+                        4.5 <i id="star" class="material-symbols-outlined"></i>
+                    </button>
+                </p>
+                <p style="margin-top: 3px;">({{book.quantity}})</p>
+            </div>
+
             <h2 class="contentName" id="discountPrice">
                 RS. {{ book.discountPrice }} <span id="price">Rs.{{ book.price }}</span>
             </h2>
         </div>
     </div>
- 
+
 </div>
 
-<div class="pagination" >
+<div class="pagination">
     <pagination-controls (pageChange)="page=$event"></pagination-controls>
 </div>
- 
