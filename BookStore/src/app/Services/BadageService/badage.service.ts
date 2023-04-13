@@ -9,7 +9,7 @@ export class BadageService {
   constructor() { }
 
   private cartItemCountSubject = new BehaviorSubject<number>(0);
-   public cartItemCount = this.cartItemCountSubject.asObservable();
+  public cartItemCount = this.cartItemCountSubject.asObservable();
 
   updateCartItemCount(count: number) {
     this.cartItemCountSubject.next(count);

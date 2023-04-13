@@ -61,7 +61,6 @@
                 <p class="feedback">Customer Feedback</p>
                 <div class="feedbackDiv">
                     <p class="overall">Overall rating</p>
-
                     <div class="starContainer">
                         <input type="radio" name="rate" id="rate-1" value="1">
                         <label for="rate-1"><img src="../../../assets/star (1).svg" width="22px"></label>
@@ -83,6 +82,32 @@
                     <textarea matInput class="feedbackInput" type="text" placeholder="write a review" name="comment"
                         [(ngModel)]="comment"></textarea>
                     <button class="submitBtn" (click)="sumitFeedBack()">Submit</button>
+                
+                </div>
+                <div>
+                    <div class="rating"  *ngFor="let feed of feedBackList">
+                        <div>
+                            <h1 class="name">{{feed.user_id.fullName }}</h1>
+                            <div class="star">
+                                <input class="starrating" type="radio" name="rate" id="rate-1" value="1">
+                                <label for="rate-1"><img src="../../../assets/star (1).svg" width="22px"></label>
+        
+                                <input class="starrating" type="radio" name="rate" id="rate-2" value="2">
+                                <label for="rate-2"><img src="../../../assets/star (1).svg" width="22px"></label>
+        
+                                <input class="starrating" type="radio" name="rate" id="rate-3" value="3">
+                                <label for="rate-3"><img src="../../../assets/star (1).svg" width="22px"></label>
+        
+                                <input class="starrating" type="radio" name="rate" id="rate-4" value="4">
+                                <label for="rate-4"><img src="../../../assets/star (1).svg" width="22px"></label>
+        
+                                <input class="starrating" type="radio" name="rate" id="rate-5" value="5">
+                                <label for="rate-5"><img src="../../../assets/star (1).svg" width="22px"></label>
+        
+                            </div>
+                            <p class="name">{{feed.comment }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

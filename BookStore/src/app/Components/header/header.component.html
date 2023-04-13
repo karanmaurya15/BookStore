@@ -15,8 +15,8 @@
         </div>
         <div class="profile-cart">
             <div class="icons" [matMenuTriggerFor]="menu">
-                <img class="iconImage" src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg">
-                <p style="margin-left: 15px;">Profile</p>
+                <img class="iconImage" style="margin-top: 10px;" src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg">
+                <h4 style="margin-left: 15px;">Profile</h4>
             </div>
             <mat-menu #menu="matMenu">
                 <h1>Welcome</h1>
@@ -31,7 +31,7 @@
             </mat-menu>
             <div class="icons">
                 <span  [matBadge]="cartItemCount" matBadgeColor="warn" style=" position: relative;  margin-top:15px;"><img class="iconImage"   src="../../../assets/cart.png" routerLink="/dashboard/cart"></span>
-                <p style="margin-left: 20px; margin-top: -12px;">Cart</p>
+                <h4 style="margin-left: 20px; margin-top: -12px;">Cart</h4>
             </div>
         </div>
     </mat-toolbar>
