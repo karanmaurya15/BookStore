@@ -75,5 +75,7 @@ export class QuickviewComponent implements OnInit{
    isShow(){
     this.show=true;
   }
+  increaseQty(){}
 
+  decreaseQty(){}
 }

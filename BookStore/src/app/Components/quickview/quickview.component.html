@@ -20,9 +20,9 @@
                         BAG</button>
                 </div>
                 <div class="plus-minus"  *ngIf="show">
-                    <button >+</button>
+                    <button (click)="increaseQty()">+</button>
                     <span class="cartQty"> 5</span>
-                    <button >-</button>
+                    <button (click)="decreaseQty()">-</button>
                 </div>
                 <button (click)="addToWishlist()" class="wishlist">
                     <mat-icon class="wishimg1">favorite</mat-icon>

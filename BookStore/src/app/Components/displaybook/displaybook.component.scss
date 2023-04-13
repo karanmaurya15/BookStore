@@ -115,12 +115,7 @@ button {
   outline: none;
   font-size: 15px;
 }
-// .pagination{
-//   position: fixed;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-// }
+
 .pagination{
   height: 10%;
   width: auto;
@@ -128,6 +123,7 @@ button {
   margin-left: 600px;
   font-size: 15px;
   padding-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { BadageService } from 'src/app/Services/BadageService/badage.service';
 import { CartService } from 'src/app/Services/CartService/cart.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class CartComponent implements OnInit {
   Book: any;
   items: any
 
-  constructor(private cartService: CartService, private snackbar: MatSnackBar, private formBuilder: FormBuilder,) { }
+  constructor(private cartService: CartService, private snackbar: MatSnackBar, private formBuilder: FormBuilder, private badageService: BadageService) { }
   ngOnInit(): void {
     this.getAllBooks()
     this.createForm = this.formBuilder.group({
@@ -37,6 +38,7 @@ export class CartComponent implements OnInit {
       console.log(responce);
       this.cartitems = responce.result
       console.log('items added', responce)
+      this.badageService.updateCartItemCount(this.cartitems.length)
     })
   }
 
