@@ -19,7 +19,7 @@
                     <button class="bag" mat-flat-button style="background-color: brown;" (click)="addToCart()">ADD TO
                         BAG</button>
                 </div>
-                <div class="plus-minus"  *ngIf="show">
+                <div class="plus-minus"  *ngIf="show && isAddedToCart">
                     <button (click)="increaseQty()">+</button>
                     <span class="cartQty"> 5</span>
                     <button (click)="decreaseQty()">-</button>

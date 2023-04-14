@@ -30,7 +30,7 @@ import { OrderPlacedComponent } from './Components/order-placed/order-placed.com
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,MatInputModule,HttpClientModule,FormsModule,MatIconModule,
     BrowserAnimationsModule,MatFormFieldModule,MatButtonModule,MatToolbarModule,MatMenuModule,MatRadioModule,
-    MatSnackBarModule,MatBadgeModule,MatPaginatorModule,NgxPaginationModule
+    MatSnackBarModule,MatBadgeModule,MatPaginatorModule,NgxPaginationModule,MatCardModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

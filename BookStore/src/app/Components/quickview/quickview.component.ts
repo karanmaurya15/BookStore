@@ -10,19 +10,20 @@ import { WishlistService } from 'src/app/Services/WishlistService/wishlist.servi
   styleUrls: ['./quickview.component.scss']
 })
 export class QuickviewComponent implements OnInit{
-  constructor(private dataService: DataService, private cartservice:CartService, private snackbar: MatSnackBar, private wishlistServisce:WishlistService) {
- 
-  }
+  constructor(private dataService: DataService, private cartservice:CartService, private snackbar: MatSnackBar, private wishlistServisce:WishlistService) { }
   Book: any;
   comment: any;
   feedBackList:any
   show=false;
+  isAddedToCart = false;
 
   ngOnInit(): void {
     this.dataService.getbookdetails.subscribe((result: any) => {
       this.Book = result;
       console.log('data of quickview',this.Book);
-      
+      if(this.Book._id){
+        this.isAddedToCart = true;
+      }
     });
     this.getFeedBackList()
   }
@@ -39,6 +40,8 @@ export class QuickviewComponent implements OnInit{
       duration: 2000,
       verticalPosition: 'bottom',
     });
+    this.isAddedToCart = true;
+    this.show = true;
   }
   addToWishlist(){
     let reqpayLoad= {

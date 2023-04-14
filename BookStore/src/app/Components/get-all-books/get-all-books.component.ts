@@ -1,40 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/Services/BookService/book.service';
 
-
 @Component({
   selector: 'app-get-all-books',
   templateUrl: './get-all-books.component.html',
   styleUrls: ['./get-all-books.component.scss']
 })
-export class GetAllBooksComponent implements OnInit{
+export class GetAllBooksComponent implements OnInit {
 
-  bookArray=[];
-  ngOnInit(){
+  originalBookArray = [];
+  sortedBookArray = [];
+
+  ngOnInit() {
     this.getAllBooks();
   }
 
-  constructor(private bookService : BookService){}
+  constructor(private bookService: BookService) {}
 
-  getAllBooks(){
-    this.bookService.getAllBook().subscribe((responce:any )=>{
-      console.log('Book Api is calling ', responce)
-      this.bookArray=responce.result
-      console.log('data', this.bookArray);
-
+  getAllBooks() {
+    this.bookService.getAllBook().subscribe((response: any) => {
+      console.log('Book Api is calling ', response)
+      this.originalBookArray = response.result
+      this.sortedBookArray = [...this.originalBookArray]; // spread operator to concatenate the arrays. 
+      console.log('data', this.originalBookArray);
     })
   }
+
   lowtohigh() {
-    console.log(this.bookArray)
-    this.bookArray= this.bookArray.sort((a: any, b: any) => a.discountPrice - b.discountPrice);
-    console.log('low to high', this.bookArray);
+    console.log(this.sortedBookArray)
+    this.sortedBookArray = this.originalBookArray.sort((a: any, b: any) => a.discountPrice - b.discountPrice);
+    console.log('low to high', this.originalBookArray);
   }
+
   hightolow() {
-    this.bookArray= this.bookArray.sort((a: any, b: any) => b.price - a.price);
-    console.log('high to low', this.bookArray);
+    this.sortedBookArray = this.originalBookArray.sort((a: any, b: any) => b.price - a.price);
+    console.log('high to low', this.sortedBookArray);
   }
+
   newestarrivals() {
-    this.bookArray= this.bookArray.reverse();
-    console.log('newest', this.bookArray);
+    this.sortedBookArray = [...this.originalBookArray].reverse(); 
+    console.log('newest', this.sortedBookArray);
   }
 }

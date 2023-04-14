@@ -10,6 +10,8 @@
   flex-wrap: wrap;
   padding: 10px;
   padding-left: 239px;
+  padding-bottom: 170px;
+
 }
 
 .box1 {
@@ -109,22 +111,15 @@ button {
   font-size: smaller;
 }
 
-.sorting {
-  height: 5vh;
-  width: 13vw;
-  outline: none;
-  font-size: 15px;
-}
-
 .pagination{
   height: 10%;
   width: auto;
   display: flex;
-  margin-left: 600px;
+  margin-left: 500px;
   font-size: 15px;
-  padding-bottom: 50px;
-  margin-bottom: 20px;
+ 
 }
+
 
 @media only screen and (max-width: 600px) {
   .box1 {
@@ -141,13 +136,13 @@ button {
   }
 }
 
+
 @media only screen and (max-width: 400px) {
   .box1 {
     align-items: center;
   
   }
   .booktitle {
- 
     margin-left: 10px;
   }
   .container {
@@ -159,5 +154,9 @@ button {
 
   h1 {
     margin-left: 80px;
+  }
+  .pagination{
+    margin-left: 300px;
+    font-size: 15px;
   }
 }
